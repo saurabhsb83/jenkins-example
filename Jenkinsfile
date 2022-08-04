@@ -7,7 +7,7 @@ pipeline {
 			stage ('Compile Stage')  {
 					steps {
 					withMaven(maven : 'MAVEN36' ) {
-						sh 'mvn clean compile'
+						bat 'mvn clean compile'
 					}
 					
 					}
@@ -16,7 +16,7 @@ pipeline {
 			stage ('Testing Stage') {
 				steps {
 						withMaven( maven : 'MAVEN36' ) {
-							sh 'mvn test'
+							bat 'mvn test'
 						}
 				}
 			}
@@ -26,7 +26,7 @@ pipeline {
 				steps {
 				
 				withMaven(maven : 'MAVEN36') {
-					sh 'mvn install'
+					bat 'mvn install'
 				}
 			}
 		}
